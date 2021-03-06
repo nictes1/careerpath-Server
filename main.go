@@ -1,18 +1,17 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
-	"github.com/nictes1/career-path-server/bd"
+	db "github.com/nictes1/career-path-server/database"
 	"github.com/nictes1/career-path-server/handlers"
 )
 
 func main() {
-	if bd.ChequeoConnection() == 0 {
-		log.Fatal("Sin conexión a la BD")
+
+	if db.ConnectionCheck() == 0 {
+		log.Fatal("No connection to the database")
 		return
 	}
-	handlers.Manejadores()
-	fmt.Println("hola mundo!")
+	handlers.LaunchingServer()
 }

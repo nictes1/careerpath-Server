@@ -10,7 +10,7 @@ import (
 )
 
 /*Manejadores: seteo mi puerto, el handler y pongo a escuchar al servidor*/
-func Manejadores() {
+func LaunchingServer() {
 	router := mux.NewRouter()
 
 	PORT := os.Getenv("PORT")
